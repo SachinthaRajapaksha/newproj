@@ -1,0 +1,148 @@
+.status-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.status-modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 500px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #dddfe2;
+}
+
+.status-modal-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1e21;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #65676b;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.close-button:hover {
+  background-color: #f2f2f2;
+}
+
+.status-modal-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.file-upload-area {
+  border: 2px dashed #dddfe2;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.file-upload-area:hover {
+  border-color: #1877f2;
+  background-color: #f0f2f5;
+}
+
+.file-upload-icon {
+  font-size: 32px;
+  color: #1877f2;
+  margin-bottom: 8px;
+}
+
+.file-upload-text {
+  font-size: 14px;
+  color: #65676b;
+}
+
+.text-input-area {
+  margin-top: 16px;
+}
+
+.text-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #dddfe2;
+  border-radius: 8px;
+  resize: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.preview-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f2f5;
+  min-height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.preview-container img,
+.preview-container video {
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 16px;
+  gap: 12px;
+  border-top: 1px solid #dddfe2;
+}
+
+.cancel-button,
+.create-button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.cancel-button {
+  background-color: #e4e6eb;
+  color: #050505;
+}
+
+.create-button {
+  background-color: #1877f2;
+  color: white;
+}
+
+.create-button:disabled {
+  background-color: #8daee5;
+  cursor: not-allowed;
+}

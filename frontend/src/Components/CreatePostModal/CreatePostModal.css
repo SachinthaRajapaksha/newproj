@@ -1,0 +1,363 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.create-post-modal {
+    background-color: white;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #dbdbdb;
+    position: relative;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-button {
+    position: absolute;
+    right: 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #65676b;
+}
+
+.modal-user-info {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 10px;
+}
+
+.modal-user-info span {
+    font-weight: 600;
+}
+
+.modal-content {
+    flex: 1;
+    min-height: 250px;
+    padding: 0 16px;
+    overflow-y: auto;
+}
+
+.file-upload-area {
+    border: 2px dashed #dbdbdb;
+    border-radius: 8px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.file-upload-area:hover, .file-upload-area.drag-active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.upload-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.upload-prompt p {
+    margin: 8px 0;
+    color: #65676b;
+}
+
+.drag-text {
+    font-size: 14px;
+}
+
+.select-button {
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #e4e6eb;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.select-button:hover {
+    background-color: #d8dadf;
+}
+
+.post-preview-container {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0;
+}
+
+.image-preview-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.edit-all-button, .add-photos-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #e4e6eb;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.edit-all-button:hover, .add-photos-button:hover {
+    background-color: #d8dadf;
+}
+
+.preview-grid {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.preview-grid-1 {
+    grid-template-columns: 1fr;
+}
+
+.preview-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.preview-grid-3 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.preview-grid-3 > .preview-image-container:first-child {
+    grid-row: span 2;
+}
+
+.preview-grid-4, .preview-grid-5, .preview-grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.preview-image-container {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.preview-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .video-preview video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .video-preview-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  .video-preview:hover .video-preview-overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .video-preview.active .video-preview-overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .play-icon {
+    font-size: 48px !important;
+    color: white;
+  }  
+
+.video-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.remove-image-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.65);
+    color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.preview-image-container:hover .remove-image-button {
+    opacity: 1;
+}
+
+.caption-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.caption-input {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    resize: none;
+    font-size: 15px;
+}
+
+.hashtag-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.caption-input:focus, .hashtag-input:focus {
+    outline: none;
+    border-color: #8e8e8e;
+}
+
+.modal-footer {
+    padding: 16px;
+    border-top: 1px solid #dbdbdb;
+}
+
+.post-button {
+    width: 100%;
+    padding: 8px 0;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.post-button:hover {
+    background-color: #0081d6;
+}
+
+.post-button:disabled {
+    background-color: #b2dffc;
+    cursor: not-allowed;
+}
+
+.upload-progress {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-progress span {
+    min-width: 40px;
+    text-align: right;
+}
+
+.video-control-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+  
+  .video-preview:hover .video-control-overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .play-pause-icon {
+    color: white;
+    font-size: 48px !important;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+  
+  .video-control-overlay:hover .play-pause-icon {
+    opacity: 1;
+  }
+  
+  .video-type-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 12px;
+  }

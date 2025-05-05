@@ -1,0 +1,54 @@
+.mainpage__uploadicon {
+    height: 80px;
+    width: 80px;
+}
+.mainpage__divider {
+    height: 0px;
+    width: 220px;
+    border: 1px solid #dbdbdb;
+    margin-top: 40px;
+}
+.mainpage__container {
+    text-align: center;
+    margin: 0px 10px 0px -20px;
+    display :flex ;
+    justify-content: center ;
+}   
+.fileupload > input {
+    display: none;
+}
+.upload_text {
+    text-align: center;
+    margin-left: -25px;
+}
+
+/* Add to MainPage.css */
+.create-post-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.create-post-button:hover {
+    background-color: #f0f2f5;
+}
+
+.create-post-button span {
+    font-weight: 500;
+    color: #65676b;
+}
+
+.no-posts-message {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 1.2rem;
+    font-style: italic;
+    background: #f9f9f9;
+    margin: 20px;
+    border-radius: 8px;
+}
